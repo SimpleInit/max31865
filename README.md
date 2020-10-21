@@ -67,13 +67,13 @@ int rt_hw_max31865_init(const char *name, struct rt_sensor_config *cfg)；
 ```c
 #include "sensor_maxim_max31865.h"
 
-#define MAX667_SPI_BUS  "spi10"
+#define MAX31865_SPI_DEVICE_NAME  "spi10"
 
 int rt_hw_max31865_port(void)
 {
     struct rt_sensor_config cfg;
 
-    cfg.intf.dev_name  = MAX31865_SPI_BUS;
+    cfg.intf.dev_name  = MAX31865_SPI_DEVICE_NAME;
     cfg.intf.user_data = (void *)(MAX31865_CFIG_FILTER_50HZ | MAX31865_CFIG_24WIRE);
     
     rt_hw_max31865_init("max31865", &cfg);
