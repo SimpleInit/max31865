@@ -11,7 +11,7 @@
 #ifndef SENSOR_MAXIM_MAX31865_H__
 #define SENSOR_MAXIM_MAX31865_H__
 
-#include <sensor.h>
+#include "drivers/sensor.h"
 
 #define MAX31865_CFIG_24WIRE         0x00   /* RTD wire: 1 = 3-wire; 0 = 2-wire or 4-wire */
 #define MAX31865_CFIG_3WIRE          0x10   /* RTD wire: 1 = 3-wire; 0 = 2-wire or 4-wire */
