@@ -20,8 +20,6 @@
   #endif /* DRV_DEBUG */
 #include <rtdbg.h>
 
-
-
 #define SENSOR_TEMP_RANGE_MAX (800)
 #define SENSOR_TEMP_RANGE_MIN (-200)
 
@@ -30,7 +28,7 @@
 #define RT_SENSOR_VENDOR_MAXIM RT_SENSOR_VENDOR_UNKNOWN
 #endif
 
-static rt_size_t _max31865_polling_get_data(rt_sensor_t sensor, struct rt_sensor_data *data)
+static RT_SIZE_TYPE _max31865_polling_get_data(rt_sensor_t sensor, struct rt_sensor_data *data)
 {
     float temperature;
     struct max31865_device *max31865_dev = sensor->parent.user_data;
@@ -45,7 +43,7 @@ static rt_size_t _max31865_polling_get_data(rt_sensor_t sensor, struct rt_sensor
     return 1;
 }
 
-static rt_size_t max31865_fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
+static RT_SIZE_TYPE max31865_fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
 {
     RT_ASSERT(buf);
 

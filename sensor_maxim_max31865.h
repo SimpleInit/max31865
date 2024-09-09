@@ -11,7 +11,22 @@
 #ifndef SENSOR_MAXIM_MAX31865_H__
 #define SENSOR_MAXIM_MAX31865_H__
 
-#include <sensor.h>
+#include <rtthread.h>
+#include <rtdef.h>
+
+#if defined(RT_VERSION_CHECK)
+    #if (RTTHREAD_VERSION >= RT_VERSION_CHECK(5, 0, 2))
+        #define RT_SIZE_TYPE   rt_ssize_t
+    #else
+        #define RT_SIZE_TYPE   rt_size_t
+    #endif
+
+    #if (RTTHREAD_VERSION >= RT_VERSION_CHECK(5, 1, 0))
+        #include "drivers/sensor.h"
+    #else
+        #include "sensor.h"
+    #endif
+#endif
 
 #define MAX31865_CFIG_24WIRE         0x00   /* RTD wire: 1 = 3-wire; 0 = 2-wire or 4-wire */
 #define MAX31865_CFIG_3WIRE          0x10   /* RTD wire: 1 = 3-wire; 0 = 2-wire or 4-wire */
@@ -19,6 +34,8 @@
 #define MAX31865_CFIG_FILTER_50HZ    0x01   /* 50Hz filtering, single conversion completion time 62.5ms */
 
 int rt_hw_max31865_init(const char *name, struct rt_sensor_config *cfg);
+
+
 
 #endif
 
