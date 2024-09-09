@@ -14,6 +14,7 @@
 #include <rtthread.h>
 #include <rtdef.h>
 
+#ifdef RT_USING_SENSOR
 #if defined(RT_VERSION_CHECK)
     #if (RTTHREAD_VERSION >= RT_VERSION_CHECK(5, 0, 2))
         #define RT_SIZE_TYPE   rt_ssize_t
@@ -36,7 +37,7 @@
 int rt_hw_max31865_init(const char *name, struct rt_sensor_config *cfg);
 
 
-
+#endif
 #endif
 
 
