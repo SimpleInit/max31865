@@ -8,8 +8,8 @@
  * 2020-10-20     SimpleInit   the first version
  */
 
-#ifndef SENSOR_MAXIM_MAX31865_H__
-#define SENSOR_MAXIM_MAX31865_H__
+#ifndef _MAXIM_MAX31865_SENSOR_V1_H__
+#define _MAXIM_MAX31865_SENSOR_V1_H__
 
 #include <rtthread.h>
 #include <rtdef.h>
