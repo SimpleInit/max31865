@@ -8,11 +8,11 @@
  * 2020-10-20     SimpleInit   the first version
  */
 
-#include "sensor_maxim_max31865.h"
+#include "maxim_max31865_sensor_v1.h"
 #include "max31865.h"
 
 //#define DRV_DEBUG
-#define DBG_TAG              "sensor.maxim.max31865"
+#define DBG_TAG              "maxim.max31865.sensor.v1"
   #ifdef DRV_DEBUG
     #define DBG_LVL          DBG_LOG
   #else
